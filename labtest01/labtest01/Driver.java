@@ -32,7 +32,7 @@ public final class Driver
 			inventory2.stock(item, random.nextInt(MAX_STOCK));
 			inventory3.stock(item, random.nextInt(MAX_STOCK));
 		}
-		Corporation iga = new Corporation();
+		Corporation iga = new Corporation("ACME");
 		iga.addInventory(inventory1);
 		iga.addInventory(inventory2);
 		iga.addInventory(inventory3);

@@ -8,10 +8,14 @@ import java.util.Map;
  * Represents a company that owns and operates
  * one or more grocery stores, each with its own inventory.
  */
-public class Corporation implements Iterable<Inventory>
+public class Corporation extends Identity implements Iterable<Inventory>, IVisitable
 {
 	private Map<String, Inventory> aInventories = new HashMap<String, Inventory>();
 	
+	public Corporation(String pName) {
+		super(pName);
+	}
+
 	/**
 	 * @param pInventory An inventory to add to the corporation.
 	 */
@@ -24,6 +28,12 @@ public class Corporation implements Iterable<Inventory>
 	public Iterator<Inventory> iterator()
 	{
 		return aInventories.values().iterator();
+	}
+	
+	@Override
+	public void accept(IVisitor pVisitor)
+	{
+		pVisitor.visitCorporation(this);
 	}
 
 }

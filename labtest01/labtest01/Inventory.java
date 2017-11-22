@@ -7,9 +7,8 @@ import java.util.Iterator;
  * Represents the inventory of a 
  * physical grocery store.
  */
-public class Inventory implements Iterable<Item>
+public class Inventory extends Identity implements Iterable<Item>, IVisitable
 {
-	private final String aName; // Unique
 	private final HashMap<Item, Integer> aInventory = new HashMap<>();
 	
 	/**
@@ -19,15 +18,7 @@ public class Inventory implements Iterable<Item>
 	 */
 	public Inventory(String pName)
 	{
-		aName = pName;
-	}
-	
-	/**
-	 * @return The unique name of this inventory.
-	 */
-	public String getName()
-	{
-		return aName;
+		super(pName);
 	}
 	
 	/**
@@ -82,4 +73,11 @@ public class Inventory implements Iterable<Item>
 	{
 		return aInventory.keySet().iterator();
 	}
+	
+	@Override
+	public void accept(IVisitor pVisitor)
+	{
+		pVisitor.visitInventory(this);
+	}
+	
 }
