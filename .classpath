@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="scratchpad"/>
 	<classpathentry kind="src" path="m7"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="src" path="labtest01"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
