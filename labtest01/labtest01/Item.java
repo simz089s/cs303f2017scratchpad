@@ -7,7 +7,7 @@ import java.util.HashMap;
  * Jar of peanut butter, package of pasta,
  * whatever.
  */
-public class Item extends Identity implements IVisitable
+public class Item extends Identity implements Comparable<IItem>, IItem, IVisitable
 {
 	private final int aId;
 	private final int aPrice; // In cents: 100 = one dollar
@@ -55,6 +55,32 @@ public class Item extends Identity implements IVisitable
 	public int getPrice()
 	{
 		return aPrice;
+	}
+	
+	/* (non-Javadoc)
+	 * @see labtest01.IItem#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object pItem)
+	{
+		if (this == pItem)
+		{
+			return true;
+		}
+		if (this.aId == ((IItem) pItem).getId())
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	/* (non-Javadoc)
+	 * @see labtest01.IItem#compareTo(labtest01.Item)
+	 */
+	@Override
+	public int compareTo(IItem pItem)
+	{
+		return this.getId() - pItem.getId();
 	}
 	
 	@Override

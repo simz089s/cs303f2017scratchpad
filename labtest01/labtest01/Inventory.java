@@ -1,7 +1,9 @@
 package labtest01;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Represents the inventory of a 
@@ -10,6 +12,7 @@ import java.util.Iterator;
 public class Inventory extends Identity implements Iterable<Item>, IVisitable
 {
 	private final HashMap<Item, Integer> aInventory = new HashMap<>();
+	private final List<ILogger> aILoggers = new ArrayList<>();
 	
 	/**
 	 * Creates a new inventory with no items in it,
@@ -26,15 +29,16 @@ public class Inventory extends Identity implements Iterable<Item>, IVisitable
 	 * @param pItem The type of item to add.
 	 * @param pQuantity The amount to add.
 	 */
-	public void stock(Item pItem, int pQuantity)
+	public void stock(IItem pIItem, int pQuantity)
 	{
 		int amount = 0;
-		if( aInventory.containsKey(pItem))
+		if( aInventory.containsKey(pIItem))
 		{
-			amount = aInventory.get(pItem);
+			amount = aInventory.get(pIItem);
 		}
 		amount += pQuantity;
-		aInventory.put(pItem, amount);
+		aInventory.put(pIItem, amount);
+		notifyStockedILoggers(pIItem);
 	}
 	
 	/**
@@ -45,11 +49,12 @@ public class Inventory extends Identity implements Iterable<Item>, IVisitable
 	 * @param pQuantity The amount to dispose.
 	 * @pre aInventory.containsKey(pItem) && pQuantity >= aInventory.get(pItem)
 	 */
-	public void dispose(Item pItem, int pQuantity)
+	public void dispose(IItem pIItem, int pQuantity)
 	{
-		int amount = aInventory.get(pItem);
+		int amount = aInventory.get(pIItem);
 		amount -= pQuantity;
-		aInventory.put(pItem, amount);
+		aInventory.put(pIItem, amount);
+		notifyDisposedILoggers(pIItem);
 	}
 	
 	/**
@@ -68,16 +73,46 @@ public class Inventory extends Identity implements Iterable<Item>, IVisitable
 		}
 	}
 
+//	@Override
+//	public Iterator<Item> iterator()
+//	{
+//		return aInventory.keySet().iterator();
+//	}
+	
 	@Override
-	public Iterator<Item> iterator()
+	public Iterator<IItem> iterator()
 	{
 		return aInventory.keySet().iterator();
+	}
+	
+	public void addILogger(ILogger... pILoggers)
+	{
+		for (ILogger pILogger : pILoggers)
+		{
+			aILoggers.add(pILogger);
+		}
 	}
 	
 	@Override
 	public void accept(IVisitor pVisitor)
 	{
 		pVisitor.visitInventory(this);
+	}
+	
+	private void notifyStockedILoggers(IItem pIItem)
+	{
+		for (ILogger iLogger : aILoggers)
+		{
+			iLogger.iItemStocked(pIItem);
+		}
+	}
+	
+	private void notifyDisposedILoggers(IItem pIItem)
+	{
+		for (ILogger iLogger : aILoggers)
+		{
+			iLogger.iItemDisposed(pIItem);
+		}
 	}
 	
 }

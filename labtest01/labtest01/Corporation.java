@@ -12,9 +12,29 @@ public class Corporation extends Identity implements Iterable<Inventory>, IVisit
 {
 	private Map<String, Inventory> aInventories = new HashMap<String, Inventory>();
 	
+//	private static Corporation INSTANCE = null;
+	
 	public Corporation(String pName) {
 		super(pName);
 	}
+	
+	/**
+	 * @param pInventories An inventory to create the corporation with.
+	 * @pre There does not exist another instance of a Corporation object.
+	 */
+//	private Corporation(HashMap<String, Inventory> pInventories)
+//	{
+//		assert (INSTANCE == null);
+//	}
+	
+//	public static Corporation getInstance(HashMap<String, Inventory> pInventories)
+//	{
+//		if (INSTANCE == null)
+//		{
+//			INSTANCE = new Corporation(pInventories);
+//		}
+//		return INSTANCE;
+//	}
 
 	/**
 	 * @param pInventory An inventory to add to the corporation.
