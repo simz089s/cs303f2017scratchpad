@@ -10,31 +10,30 @@ import java.util.Map;
  */
 public class Corporation extends Identity implements Iterable<Inventory>, IVisitable
 {
-	private Map<String, Inventory> aInventories = new HashMap<String, Inventory>();
+	private Map<String, Inventory> aInventories;
 	
-//	private static Corporation INSTANCE = null;
-	
-	public Corporation(String pName) {
-		super(pName);
-	}
+	private static Corporation INSTANCE;
 	
 	/**
 	 * @param pInventories An inventory to create the corporation with.
+	 * @param pName A name to create the corporation with.
 	 * @pre There does not exist another instance of a Corporation object.
 	 */
-//	private Corporation(HashMap<String, Inventory> pInventories)
-//	{
+	private Corporation(String pName, HashMap<String, Inventory> pInventories)
+	{
 //		assert (INSTANCE == null);
-//	}
+		super(pName);
+		aInventories = pInventories;
+	}
 	
-//	public static Corporation getInstance(HashMap<String, Inventory> pInventories)
-//	{
-//		if (INSTANCE == null)
-//		{
-//			INSTANCE = new Corporation(pInventories);
-//		}
-//		return INSTANCE;
-//	}
+	public static Corporation getInstance(String pName, HashMap<String, Inventory> pInventories)
+	{
+		if (INSTANCE == null)
+		{
+			INSTANCE = new Corporation(pName, pInventories);
+		}
+		return INSTANCE;
+	}
 
 	/**
 	 * @param pInventory An inventory to add to the corporation.

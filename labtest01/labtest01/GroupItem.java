@@ -66,4 +66,9 @@ public class GroupItem implements Comparable<IItem>, IItem
 		return this.getId() - pItem.getId();
 	}
 
+	@Override
+	public void accept(IVisitor pVisitor) {
+		pVisitor.visitIItem(this);
+	}
+
 }

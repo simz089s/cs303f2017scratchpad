@@ -86,7 +86,7 @@ public class Item extends Identity implements Comparable<IItem>, IItem, IVisitab
 	@Override
 	public void accept(IVisitor pVisitor)
 	{
-		pVisitor.visitItem(this);
+		pVisitor.visitIItem(this);
 	}
 	
 }

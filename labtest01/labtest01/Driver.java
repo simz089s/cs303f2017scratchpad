@@ -1,5 +1,6 @@
 package labtest01;
 
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -32,7 +33,7 @@ public final class Driver
 			inventory2.stock(item, random.nextInt(MAX_STOCK));
 			inventory3.stock(item, random.nextInt(MAX_STOCK));
 		}
-		Corporation iga = new Corporation("ACME");
+		Corporation iga = Corporation.getInstance("ACME", new HashMap<String, Inventory>());
 		iga.addInventory(inventory1);
 		iga.addInventory(inventory2);
 		iga.addInventory(inventory3);

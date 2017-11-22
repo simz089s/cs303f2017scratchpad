@@ -1,6 +1,6 @@
 package labtest01;
 
-public interface IItem
+public interface IItem extends IVisitable
 {
 
 	/**
@@ -21,5 +21,7 @@ public interface IItem
 	boolean equals(Object pItem);
 
 	int compareTo(IItem pItem);
+	
+//	void accept(IVisitor pVisitor);
 
 }

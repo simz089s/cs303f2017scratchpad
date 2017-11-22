@@ -12,16 +12,16 @@ public abstract class DefaultVisitor implements IVisitor {
 
 	@Override
 	public void visitInventory(Inventory pInventory) {
-		for (Item pItem : pInventory)
+		for (IItem pIItem : pInventory)
 		{
-			pItem.accept(this);
+			pIItem.accept(this);
 		}
 
 	}
 
 	@Override
-	public void visitItem(Item pItem) {
-		pItem.accept(this);
+	public void visitIItem(IItem pIItem) {
+		pIItem.accept(this);
 	}
 
 }
