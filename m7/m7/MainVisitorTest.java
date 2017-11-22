@@ -11,7 +11,14 @@ public class MainVisitorTest
 			File pFiles = new File(new String("/file" + i));
 			directory.addFiles(pFiles);
 		}
-		directory.addFiles(new SymLink(new String("/symbolic_link")));
+		SymLink symlink = new SymLink(new String("/symbolic_link"));
+		directory.addFiles(symlink);
+		for (int i = 5; i < 10; i++)
+		{
+			File pFiles = new File(new String("/file" + i));
+			symlink.addFiles(pFiles);
+		}
+		
 		PrintVisitor printer = new PrintVisitor();
 		printer.visitDirectory(directory);
 	}

@@ -1,6 +1,6 @@
 package m7;
 
-public class PrintVisitor extends DefaultVisitor implements Visitor
+public class PrintVisitor extends DefaultVisitor
 {
 
 	public PrintVisitor()
@@ -8,22 +8,25 @@ public class PrintVisitor extends DefaultVisitor implements Visitor
 		super();
 	}
 	
+	@Override
 	public void visitFile(File pFile)
 	{
 		System.out.println(pFile.getName());
-		pFile.accept(this);
+		super.visitFile(pFile);
 	}
 	
+	@Override
 	public void visitSymLink(SymLink pSymLink)
 	{
 		System.out.println(pSymLink.getName());
-		pSymLink.accept(this);
+		super.visitSymLink(pSymLink);
 	}
 	
+	@Override
 	public void visitDirectory(Directory pDirectory)
 	{
 		System.out.println(pDirectory.getName());
-		pDirectory.accept(this);
+		super.visitDirectory(pDirectory);
 	}
 
 }

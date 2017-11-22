@@ -1,4 +1,6 @@
 package scratchpad;
+import static org.junit.Assert.assertEquals;
+
 import java.util.HashMap;
 
 public class TestHashMap
@@ -15,11 +17,10 @@ public class TestHashMap
 		return ALL_STRINGS.get(key);
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
-	{
-		assert 1 == 1;
-		assertEquals(1, 1);
-	}
+//	@Test(expected = IllegalArgumentException.class)
+//	{
+//		assertEquals(1, 1);
+//	}
 
 	public static void main(String[] args)
 	{

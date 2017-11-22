@@ -1,10 +1,9 @@
 package scratchpad;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
-import module05.ca.mcgill.cs.swdesign.m5.Movie;
-import module05.ca.mcgill.cs.swdesign.m5.Show;
-
-public class MidtermIterator implements Iterable<T>
+public class MidtermIterator implements Iterable<Movie>
 {
 	private List<Show> aShows;
 	
@@ -20,5 +19,6 @@ public class MidtermIterator implements Iterable<T>
 			}
 			
 		}
+		return movies.iterator();
 	}
 }
