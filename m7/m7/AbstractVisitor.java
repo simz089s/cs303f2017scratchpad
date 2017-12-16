@@ -1,12 +1,12 @@
 package m7;
 
-public abstract class DefaultVisitor implements Visitor
+public abstract class AbstractVisitor implements Visitor
 {
 
 	@Override
 	public void visitFile(File pFile)
 	{
-		
+		// Does nothing
 	}
 
 	@Override

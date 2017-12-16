@@ -1,6 +1,6 @@
 package m7;
 
-public class PrintVisitor extends DefaultVisitor
+public class PrintVisitor extends AbstractVisitor
 {
 
 	public PrintVisitor()
