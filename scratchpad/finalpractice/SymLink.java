@@ -30,5 +30,10 @@ public class SymLink extends AbstractFile implements Iterable<IFile>
 	public void accept(Visitor pVisitor) {
 		pVisitor.visitSymLink(this);
 	}
+	
+	public void delete()
+	{
+		aIFile.clear();
+	}
 
 }

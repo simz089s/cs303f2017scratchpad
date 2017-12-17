@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_144" class="java.beans.XMLDecoder">
+ <object class="ca.mcgill.cs.jetuml.diagrams.ClassDiagramGraph">
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.ClassNode" id="ClassNode0">
+    <void method="translate">
+     <int>80</int>
+     <int>30</int>
+    </void>
+    <void property="attributes">
+     <void property="text">
+      <string>- String aName</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string># AbstractFile(String pName)
++ String getName()</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>«abstract»
+AbstractFile</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.ClassNode" id="ClassNode1">
+    <void method="translate">
+     <int>50</int>
+     <int>170</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>File</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.ClassNode" id="ClassNode2">
+    <void method="translate">
+     <int>180</int>
+     <int>170</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>SymLink</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.ClassNode" id="ClassNode3">
+    <void method="translate">
+     <int>330</int>
+     <int>170</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>Directory</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.InterfaceNode" id="InterfaceNode0">
+    <void method="translate">
+     <int>330</int>
+     <int>40</int>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>String getName()</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>«interface»
+IFile</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.InterfaceNode" id="InterfaceNode1">
+    <void method="translate">
+     <int>590</int>
+     <int>40</int>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>+ void visitFile(File pFile)
++ void visitSymLink(SymLink pSymLink)
++ void visitDirectory(Directory pDirectory)</string>
+     </void>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>«interface»
+Visitor</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.ClassNode" id="ClassNode4">
+    <void method="translate">
+     <int>670</int>
+     <int>170</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>«abstract»
+AbstractVisitor</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreRootNode">
+   <object class="ca.mcgill.cs.jetuml.graph.nodes.ClassNode" id="ClassNode5">
+    <void method="translate">
+     <int>460</int>
+     <int>170</int>
+    </void>
+    <void property="name">
+     <void property="text">
+      <string>HiddenDirectory</string>
+     </void>
+    </void>
+   </object>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.GeneralizationEdge"/>
+   <object idref="ClassNode1"/>
+   <object idref="ClassNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.GeneralizationEdge"/>
+   <object idref="ClassNode2"/>
+   <object idref="ClassNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.GeneralizationEdge"/>
+   <object idref="ClassNode3"/>
+   <object idref="ClassNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.GeneralizationEdge">
+    <void property="type">
+     <object class="java.lang.Enum" id="GeneralizationEdge$Type0" method="valueOf">
+      <class>ca.mcgill.cs.jetuml.graph.edges.GeneralizationEdge$Type</class>
+      <string>Implementation</string>
+     </object>
+    </void>
+   </object>
+   <object idref="ClassNode0"/>
+   <object idref="InterfaceNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.AggregationEdge"/>
+   <object idref="ClassNode2"/>
+   <object idref="InterfaceNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.AggregationEdge"/>
+   <object idref="ClassNode3"/>
+   <object idref="InterfaceNode0"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.GeneralizationEdge">
+    <void property="type">
+     <object idref="GeneralizationEdge$Type0"/>
+    </void>
+   </object>
+   <object idref="ClassNode4"/>
+   <object idref="InterfaceNode1"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.AggregationEdge"/>
+   <object idref="ClassNode5"/>
+   <object idref="ClassNode3"/>
+  </void>
+  <void method="restoreEdge">
+   <object class="ca.mcgill.cs.jetuml.graph.edges.GeneralizationEdge"/>
+   <object idref="ClassNode5"/>
+   <object idref="ClassNode0"/>
+  </void>
+ </object>
+</java>

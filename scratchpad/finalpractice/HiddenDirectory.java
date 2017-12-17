@@ -28,5 +28,10 @@ public class HiddenDirectory implements IFile, Iterable<IFile>
 	{
 		return "." + aDirectory.getName();
 	}
+	
+	public void clear()
+	{
+		aDirectory.clear();
+	}
 
 }

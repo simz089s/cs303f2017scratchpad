@@ -1,6 +1,7 @@
 package finalpractice;
 
-public class PrintVisitor extends AbstractVisitor {
+public class PrintVisitor extends AbstractVisitor
+{
 
 	public PrintVisitor()
 	{

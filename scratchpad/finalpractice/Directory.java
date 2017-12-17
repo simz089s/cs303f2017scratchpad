@@ -37,5 +37,10 @@ public class Directory extends AbstractFile implements Iterable<IFile>
 	{
 		pVisitor.visitDirectory(this);
 	}
+	
+	public void clear()
+	{
+		aIFiles.clear();
+	}
 
 }
