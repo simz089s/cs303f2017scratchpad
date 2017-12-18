@@ -11,7 +11,18 @@ public class NumberIncrementer extends Thread
 	
 	public void run()
 	{
-        aNumberBox.increment();
+		while (true)
+		{
+			try
+			{
+				Thread.sleep(1000);
+				aNumberBox.increment();
+			}
+			catch (InterruptedException e)
+			{
+				return;
+			}
+		}
     }
 
 }

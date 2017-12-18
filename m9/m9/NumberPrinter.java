@@ -1,5 +1,9 @@
 package m9;
 
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class NumberPrinter extends Thread
 {
 	private NumberBox aNumberBox;
@@ -11,7 +15,10 @@ public class NumberPrinter extends Thread
 	
 	public void run()
 	{
-        System.out.println(aNumberBox);
+		while (true)
+		{
+			System.out.println(aNumberBox.getNumber());
+		}
     }
 
 }

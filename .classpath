@@ -5,7 +5,9 @@
 	<classpathentry kind="src" path="m8"/>
 	<classpathentry kind="src" path="m7"/>
 	<classpathentry kind="src" path="m9"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="src" path="m10"/>
 	<classpathentry kind="src" path="labtest01"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="src" path="m5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

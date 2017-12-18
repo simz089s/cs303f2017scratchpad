@@ -1,6 +1,10 @@
-package labtest01;
+package finalpractice;
 
 import java.util.Random;
+
+import labtest01.Corporation;
+import labtest01.Inventory;
+import labtest01.Item;
 
 /**
  * Utility class with a driver program and some 

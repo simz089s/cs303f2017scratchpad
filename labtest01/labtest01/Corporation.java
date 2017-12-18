@@ -34,6 +34,12 @@ public class Corporation extends Identity implements Iterable<Inventory>, IVisit
 		}
 		return INSTANCE;
 	}
+	
+	public Corporation(String pName)
+	{
+		super(pName);
+		aInventories = new HashMap<String, Inventory>();
+	}
 
 	/**
 	 * @param pInventory An inventory to add to the corporation.

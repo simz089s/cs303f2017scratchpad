@@ -1,5 +1,9 @@
 package m9;
 
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class MainNumberBox
 {
 	
@@ -11,18 +15,20 @@ public class MainNumberBox
 		
 		ni.start();
 		np.start();
-		
-		for (int i = 0; i < 1000000000; i++)
+		new Thread(new Runnable()
 		{
-			try
+			
+			@Override
+			public void run()
 			{
-				np.sleep(4000);
+				while (nb.getNumber() < 10)
+				{
+					
+				}
+				ni.interrupt();
+				np.interrupt();
 			}
-			catch (InterruptedException e)
-			{
-				return;
-			}
-		}
+		}).start();
 	}
 
 }

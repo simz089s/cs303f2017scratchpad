@@ -1,23 +1,45 @@
 package scratchpad;
+import static org.junit.Assert.*;
+
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class TestJavaStack
 {
+	private Stack<Integer> aIntStack;
+	private Stack<String> aStack;
+	
+	@Before
+	public void setup()
+	{
+		aStack = new Stack<String>();
+		aStack.push("a string");
+		aIntStack = new Stack<Integer>();
+		aIntStack.push(0);
+	}
+	
+	@Test
+	public void testPeek()
+	{
+		assertTrue(aStack.peek().equals("a string"));
+	}
 	
 	@Test(expected = EmptyStackException.class)
 	public void testPopEmpty() throws EmptyStackException
 	{
-		Stack<String> stack = new Stack<>();
-		stack.pop();
+		aStack.pop();
+		aStack.pop();
 	}
-
-	public static void main(String[] args)
+	
+	@Test
+	public void testPush()
 	{
-		// TODO Auto-generated method stub
-
+		aStack.push("test");
+		assertEquals(aStack.size(), 2);
+		assertTrue(aStack.peek().equals("test"));
 	}
 
 }
