@@ -29,6 +29,7 @@ public class PrintVisitor extends AbstractVisitor
 		super.visitDirectory(pDirectory);
 	}
 	
+	@Override
 	public void visitHiddenDirectory(HiddenDirectory pHiddenDirectory)
 	{
 		System.out.println("/" + pHiddenDirectory.getName());
