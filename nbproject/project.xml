@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.java.j2seproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
+            <name>cs303f2017scratchpad</name>
+            <source-roots>
+                <root id="src.dir" name="m8"/>
+                <root id="m7.dir"/>
+                <root id="m9.dir"/>
+                <root id="m10.dir"/>
+                <root id="labtest01.dir"/>
+                <root id="m5.dir"/>
+                <root id="m6.dir"/>
+            </source-roots>
+            <test-roots>
+                <root id="test.src.dir" name="scratchpad"/>
+            </test-roots>
+        </data>
+    </configuration>
+</project>
